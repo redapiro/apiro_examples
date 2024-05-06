@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<apiroConf version="1" xmlns="http://apiro.com/apiro/v1/root">
+  <groups/>  
+  <loadOrder>30</loadOrder>  
+  <dataFeeds> 
+    <dataFeed definition="EXPR_EXCEL_FEED2" name="CUSTOMER_GIT_XLSX_A0">
+      <groupTags> 
+        <groupTag>DEFAULT</groupTag> 
+      </groupTags>  
+      <metaData/>  
+      <abstract>false</abstract>  
+      <inheritable>true</inheritable>  
+      <description/>  
+      <execPriority>50</execPriority>  
+      <execPredicate>#GRV{true}</execPredicate>  
+        <config>
+            <![CDATA[{
+                "dataSource": {
+                  "config": {
+                    "username": "${SYS:APIRO_USERNAME}",
+                    "password": "${SYS:APIRO_GITHUB_PW}",
+                    "gitURL": "https://github.com/redapiro/apiro_examples.git",
+                    "branch": "main",
+                    "pathPrefix": "/artifacts/source_files/customers_a.xlsx"
+                  },
+                  "entity": "GIT"
+                },
+                "dataAtLine": 2,
+                "sheet": "data",
+                "itemLimit": 20,
+                "explicitMappings": [
+                  {
+                    "dictionary": "BAC",
+                    "value": "#GRV{PAYLOAD.resolve('A')}"
+                  },
+                  {
+                    "dictionary": "FIRST_NAME",
+                    "value": "#GRV{PAYLOAD.resolve('B')}"
+                  },
+                  {
+                    "dictionary": "LAST_NAME",
+                    "value": "#GRV{PAYLOAD.resolve('C')}"
+                  },
+                  {
+                    "dictionary": "ADDRESS",
+                    "value": "#GRV{PAYLOAD.resolve('D')}"
+                  },
+                  {
+                    "dictionary": "PHONE_NUMBER",
+                    "value": "#GRV{PAYLOAD.resolve('E')}"
+                  },
+                  {
+                    "dictionary": "AGE",
+                    "value": "#GRV{PAYLOAD.resolve('F')}"
+                  },
+                  {
+                    "dictionary": "YEARLY_INCOME",
+                    "value": "#GRV{PAYLOAD.resolve('G')}"
+                  },
+                  {
+                    "dictionary": "TFN",
+                    "value": "#GRV{PAYLOAD.resolve('H')}"
+                  },
+                  {
+                    "dictionary": "PORTFOLIO_VALUE",
+                    "value": "#GRV{PAYLOAD.resolve('I')}"
+                  },
+                  {
+                    "dictionary": "COMPANY_NAME",
+                    "value": "#GRV{PAYLOAD.resolve('J')}"
+                  },
+                  {
+                    "dictionary": "COMPANY_ADDRESS",
+                    "value": "#GRV{PAYLOAD.resolve('K')}"
+                  },
+                  {
+                    "dictionary": "COMPANY_WEBSITE",
+                    "value": "#GRV{PAYLOAD.resolve('L')}"
+                  },
+                  {
+                    "dictionary": "PROFILE_IMAGE",
+                    "value": "#GRV{PAYLOAD.resolve('M')}"
+                  },
+                  {
+                    "dictionary": "XML_ROOT_DOC",
+                    "value": "#GRV{PAYLOAD.resolve('N')}"
+                  },
+                  {
+                    "dictionary": "JSON_ROOT_DOC",
+                    "value": "#GRV{PAYLOAD.resolve('O')}"
+                  }
+                ]
+              }
+            ]]>
+          </config>
+      <longLived>true</longLived>  
+      <enabled>false</enabled>  
+      <schema>CUSTOMER0</schema>
+      <push>true</push>  
+      <pull>true</pull>  
+      <cronTriggers> 
+        <cronTrigger> 
+          <description>Every day at 6pm (18:00)</description>  
+          <cron>0 0 18 ? * * *</cron> 
+        </cronTrigger> 
+      </cronTriggers> 
+    </dataFeed> 
+  </dataFeeds>  
+  <dataSinks/> 
+</apiroConf>

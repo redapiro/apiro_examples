@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "BAC": "BAC111111",
+      "FIRST_NAME": "Tom",
+      "LAST_NAME": "Jones",
+      "ADDRESS": "18 Park street",
+      "PHONE_NUMBER": "0412736894",
+      "AGE": "22",
+      "YEARLY_INCOME": "89000",
+      "TFN": "111 111 111",
+      "PORTFOLIO_VALUE": "100000",
+      "COMPANY_NAME": "Slack Technologies, Inc.",
+      "COMPANY_ADDRESS": "500 Howard St, San Francisco, CA 94105, USA",
+      "COMPANY_WEBSITE": "www.slack.com",
+      "PROFILE_IMAGE": ""
+    },
+    {
+      "BAC": "BAC222222",
+      "FIRST_NAME": "Bob",
+      "LAST_NAME": "Smith",
+      "ADDRESS": "2 Mayfair avenue",
+      "PHONE_NUMBER": "042578350",
+      "AGE": "35",
+      "YEARLY_INCOME": "10000",
+      "TFN": "222 222 222",
+      "PORTFOLIO_VALUE": "80000",
+      "COMPANY_NAME": "Zoom Video Communications, Inc.",
+      "COMPANY_ADDRESS": "55 Almaden Blvd, San Jose, CA 95113, USA",
+      "COMPANY_WEBSITE": "www.zoom.us",
+      "PROFILE_IMAGE": ""
+    },
+    {
+      "BAC": "BAC333333",
+      "FIRST_NAME": "Lucy",
+      "LAST_NAME": "Rogers",
+      "ADDRESS": "55 Church street",
+      "PHONE_NUMBER": "0462776132",
+      "AGE": "54",
+      "YEARLY_INCOME": "125000",
+      "TFN": "333 333 333",
+      "PORTFOLIO_VALUE": "1110000",
+      "COMPANY_NAME": "EFS Strategic",
+      "COMPANY_ADDRESS": "Level 6, 156 Pacific Hwy, Greenwich, NSW 2065",
+      "COMPANY_WEBSITE": "https://www.efs.com.au",
+      "PROFILE_IMAGE": ""
+    }
+  ]
+}

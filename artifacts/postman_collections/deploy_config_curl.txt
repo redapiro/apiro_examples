@@ -1,0 +1,3 @@
+curl --location 'https://apiro.com.au/rest/cfgsource/trigger/ROOT' \
+--header 'token: Tol4HDbjwqp8s7jJ0HMINboh3DNWBFeo7Z/BMXIjLdD8omgcP6j/kl/NsNTKTHYNmS/NPA8sRKLNo+EWdQ8NyoTaTAJl8deRVIWc19oWdA6wX9IASQ9xk8qq4RFUHw7Bj5xiOz7v1qhfkLTL2kx2Dppc0RNdEV2hwafmAXJFGfOAn0g4TPD4qFzKhvrRdWwinQvLLHgpQZ7glv0ScgUe8oupVQNqydOCYpWAs6Jqaw+/JcdJaClC++if+i5tJR7wuoVVZ0TSwtssrYPV0WdvIeo+1hUOFVmlzrjhEVQCGs2clkwSS7XUkVjNnNurCwo26wnbK38pebjHu8c1AkcRrpSVcg8ww/mjJamm585nQBelJdQ/VRJchcU=' \
+--data ''

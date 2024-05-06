@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf version="1" xmlns="http://apiro.com/apiro/v1/root">
+    <loadOrder>30</loadOrder>
+    <distributions>
+        <distribution name="DISTR_CUSTOMER_EMAIL_ATTACH_CSV_1AM_0" schema="CUSTOMER0">
+            <description>Distributes all CUSTOMER schema data, via email as a CSV attachhment, every day at 1am</description>
+            <dataBlockCollection name="DATABLOCK_COLLECTION" entity="CUSTOMER0_ALL" />
+            <formatter name="FORMATTER" entity="CSV"/>
+            <dataSinks>
+                <dataSink name="EMAIL_ATTACH" entity="DATA_SINK_CUSTOMER_EMAIL_ATTACH_CSV_0"/>
+            </dataSinks>
+
+            <autoTrigger>false</autoTrigger>
+            <cronTriggers>
+                <cronTrigger>
+                    <description>Executes at 1am every day</description>
+                    <!--https://freeformatter.com/cron-expression-generator-quartz.html-->
+                    <cron>0 0 1 ? * * *</cron>
+                </cronTrigger>
+            </cronTriggers>
+
+        </distribution>
+    </distributions>
+</apiroConf>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+        <envProperty>
+            <!--<env>APIRO_PRE_DEMO</env> should match -> docker-compose.yaml APIRO_INSTANCEID: APIRO_PRE_DEMO-->
+            <name>APIRO_USERNAME</name>
+            <value>apiropublic</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <!--<env>APIRO_PRE_DEMO</env> should match -> docker-compose.yaml APIRO_INSTANCEID: APIRO_PRE_DEMO-->
+            <name>APIRO_GITHUB_PW</name>
+            <value>SFA3W75PcDXPDI/YYtJfDggwazLiwe33ePKqDskR1K8jAfVMCYnVoE/QqjTa5UkusRb+de9GzwmeQPOHVqiyYZOifc52Tn/7jtUU96W6toAdPnHCk+KanssMV0SdhxIp</value>
+            <encrypted>true</encrypted>
+        </envProperty>
+    </envProperties>
+</apiroConf>

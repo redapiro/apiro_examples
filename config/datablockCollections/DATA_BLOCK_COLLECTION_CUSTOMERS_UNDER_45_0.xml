@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apiroConf  version="1" xmlns="http://apiro.com/apiro/v1/root">
+    <loadOrder>20</loadOrder>
+    <dataSinks/>
+    <dataBlockCollectFilters>
+        <dataBlockCollectFilter name="CUSTOMERS_YOUNGER_45_0" definition="GEN_EXPRESS">
+            <description/>
+            <config>
+                <![CDATA[
+                        #GRV{
+                             return ( CTX['AGE'] < 45)
+                        }
+                    ]]>
+            </config>
+            <abstract>false</abstract>
+            <inheritable>true</inheritable>
+            <execPredicate>#GRV{ true }</execPredicate>
+            <schema>CUSTOMER0</schema>
+        </dataBlockCollectFilter>
+    </dataBlockCollectFilters>
+</apiroConf>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<apiroConf version="1" xmlns="http://apiro.com/apiro/v1/root">
+    <groups/>
+    <loadOrder>15</loadOrder>
+    <schemas>
+        <schema defBacked="false" historical="false" name="CUSTOMER0">
+            <!--*********** Data block identity ******************-->
+            <identityKeys>
+                <identityKey>BAC</identityKey>
+            </identityKeys>
+            <!--************************************************** -->
+
+            <!--***********Data block groups***********************-->
+            <groupTags>
+                <groupTag>FINAL</groupTag>
+            </groupTags>
+            <!--************************************************** -->
+
+            <!--***********Data block metadata*********************-->
+            <metaData/>
+            <!--************************************************** -->
+            <!--***Data block governance, security and historical**-->
+            <workingRetention>100 years</workingRetention>
+            <historicalRetention>100 years</historicalRetention>
+            <allowHistoricalUpdate>false</allowHistoricalUpdate>
+            <biTemporal>false</biTemporal>
+            <temporalTimeFormat>yyyy-MM-dd</temporalTimeFormat>
+            <abstract>false</abstract>
+            <!--************************************************** -->
+            <dataPoints>
+                    <dataPoint name="BAC"
+                           displayName="Bank Account Code"
+                           dataType="STRING"
+                           canEditValid="true"
+                           canEditViolated="true">
+                    <nullable>false</nullable>
+
+                    <!---Data point governance properties-->
+                    <encrypted>false</encrypted>
+                    <pii>false</pii>
+                    <encrypted>false</encrypted>
+                    <encryptionKeyId>DEFAULT</encryptionKeyId>
+                    <ignoreChangeDetect>false</ignoreChangeDetect>
+
+                    <!---Data point Development properties-->
+                    <noOverride>false</noOverride>
+
+                    <!---Data point Groups-->
+                    <groupTags>
+                        <groupTag>DEFAULT</groupTag>
+                    </groupTags>
+
+                    <!---Data Point metadata-->
+                    <metaData>
+                        <item name="piiClassification">
+                            <simpleValues>
+                                <simpleValue>High-Risk</simpleValue>
+                            </simpleValues>
+                        </item>
+                    </metaData>
+
+
+                    <!---Data Processors-->
+                    <rawDPValidators/>
+                    <rawDPProcessors/>
+                    <!-- <consolidationAlgorithm/>  -->
+                    <consDPValidators/>
+                    <consDPProcessors/>
+                </dataPoint>
+
+
+
+                <dataPoint name="AGE"
+                           dataType="INTEGER"
+                           canEditValid="true"
+                           canEditViolated="true"
+                           displayName="Age">
+                    <rawDPValidators>
+                        <rawDPValidator name="INVALID_IF_NULL" entity="NOT_NULL"/>
+                        <rawDPValidator name="INVALID_IF_NEGATIVE" entity="POSITIVE"/>
+                    </rawDPValidators>
+
+                    <consDPValidators>
+                        <consDPValidator name="INVALID_IF_NULL" entity="NOT_NULL"/>
+                    </consDPValidators>
+                </dataPoint>
+                <dataPoint name="FIRST_NAME" displayName="First Name"  dataType="STRING">
+                    <rawDPValidators>
+                        <!--
+                        <rawDPValidator name="IN_BAC_SET_CHECK " entity="IN_SET">
+                            <config>
+                                <![CDATA[
+                                    {
+                                        ignoreCase : true,
+                                        options : [ "Tom", "Bob"]
+                                    }
+                                ]]>
+                            </config>
+                        </rawDPValidator>
+                        -->
+                    </rawDPValidators>
+                </dataPoint>
+                <dataPoint name="LAST_NAME" dataType="STRING">
+                    <nullable>false</nullable>
+                    <metaData>
+                        <item name="APIRO_MOCK_CATEGORY">
+                            <simpleValues>
+                                <simpleValue>SURNAME</simpleValue>
+                            </simpleValues>
+                        </item>
+                    </metaData>
+                    <sampleData>jones</sampleData>
+
+                </dataPoint>
+                <dataPoint name="LAST_NAME_ANON" dataType="STRING" displayName="Last Name Anonymised">
+                    <sampleData>jones</sampleData>
+
+                    <consDPProcessors>
+                        <consDPProcessor name="INLINE_ANON" entity="ANONYMISER">
+                            <config>
+                                <![CDATA[
+                                {
+                                    "fromDP":"LAST_NAME"
+                                }
+                                ]]>
+                            </config>
+                        </consDPProcessor>
+                    </consDPProcessors>
+                </dataPoint>
+                <dataPoint name="ADDRESS" displayName="Address"  dataType="STRING"/>
+                <dataPoint name="PHONE_NUMBER" displayName="Phone Number"  dataType="STRING"/>
+                <dataPoint name="YEARLY_INCOME" displayName="Yearly Income" dataType="DECIMAL"/>
+                <dataPoint name="CAR_EXPENSES" displayName="Car expenses" dataType="STRING">
+                    <consDPProcessors>
+                        <consDPProcessor name="COPY_EXP" entity="GEN_EXPRESS">
+                            <config>
+                                <![CDATA[
+                                #GRV{
+                                    CTX['.'] = CTX.DDX( 'INVOICE',
+                                    [ 'receiver' : ''+CTX['FIRST_NAME']+' '+CTX['LAST_NAME' ] ],
+                                    'total_amount' )
+                                }
+                                ]]>
+                            </config>
+                        </consDPProcessor>
+                    </consDPProcessors>
+                </dataPoint>
+                <dataPoint name="TFN" displayName="Tax File Number" dataType="STRING"/>
+                <dataPoint name="TFN_MASKED" displayName="Tax File Number Masked" dataType="STRING">
+                    <consDPProcessors>
+                        <consDPProcessor name="TFN_HASH_MASKING" entity="HASH_MASK">
+                            <config>
+                                <![CDATA[
+                            {
+                                "inputValue":"#GRV{ CTX['TFN'] }",
+                                "maskingSalt":"aqQwSxXcfgdejhbJhdygjyfdghjHGYYIdh!66gydshasGY!"
+                            }
+                        ]]>
+                            </config>
+                        </consDPProcessor>
+                    </consDPProcessors>
+                </dataPoint>
+                <dataPoint name="PORTFOLIO_VALUE" displayName="Investment Portfolio Value" dataType="DECIMAL">
+                    <consolidationAlgorithm name="PORTF_VALUE_WEIGHTED_MEAN_01" entity="GEN_EXPRESS">
+                        <config>
+                            <![CDATA[
+                                #GRV{
+                                    def list= []
+
+                                    list.add(items.get("CUSTOMER_GIT_XLSX_A0"))
+                                    list.add(items.get("CUSTOMER_GIT_XLSX_B0"))
+                                    list.remove(null)
+
+                                    if(list.size()==0)
+                                        return 0;
+                                    else if (list.size() == 1)
+                                        return list[0]
+                                    else {
+                                        return (list[0].asDBL()*0.8 + list[1].asDBL()*0.2)
+                                    }
+                                }
+                                ]]>
+                        </config>
+                    </consolidationAlgorithm>
+
+
+                    <consDPValidators>
+
+                        <consDPValidator name="HISTORICAL_PERCENTAGE_SHIFT" entity="HISTORICAL_SHIFT">
+                            <config>
+                                <![CDATA[
+                                    {
+                                        "priorValues" : 5,
+                                        "percent" : 5.2,
+                                        "comparisonMore" : true
+                                    }
+                                ]]>
+                            </config>
+                        </consDPValidator>
+                    </consDPValidators>
+                </dataPoint>
+                <dataPoint name="COMPANY_NAME" displayName="Company Name" dataType="STRING"/>
+                <dataPoint name="COMPANY_ADDRESS" displayName="Company Address" dataType="STRING"/>
+                <dataPoint name="xmlRootDoc" displayName="XML Root Doc" dataType="XML"/>
+                <dataPoint name="jsonRootDoc" displayName="JSON Root Doc" dataType="JSON"/>
+                <dataPoint name="PROFILE_IMAGE" displayName="Profile Image" dataType="BLOB"/>
+
+            </dataPoints>
+
+            <schemaAppliedProcessors>
+                <groupTags>
+                    <groupTag>DEFAULT</groupTag>
+                </groupTags>
+                <metaData/>
+                <rawDPValidators/>
+                <rawDPProcessors/>
+                <consDPValidators/>
+                <consDPProcessors/>
+                <dataBlockProcessors>
+                    <!--
+                    <dataBlockProcessor name="PUBLISH_CUSTOMER_DATA" entity="ADHOC_JSON_SINK">
+                        <config>
+                            <![CDATA[
+                                {
+                                    "jsonPayload": {
+                                        "bac": "#GRV{ CTX['BAC'] }",
+                                        "first_name": "#GRV{ CTX['FIRST_NAME'] }",
+                                        "last_name": "#GRV{ CTX['LAST_NAME'] }",
+                                        "address": "#GRV{ CTX['ADDRESS'] }",
+                                        "phone_number": "#GRV{ CTX['PHONE_NUMBER'] }",
+                                        "age": "#GRV{ CTX['AGE'] }",
+                                        "yearly_income": "#GRV{ CTX['YEARLY_INCOME'] }",
+                                        "tfn": "#GRV{ CTX['TFN'] }",
+                                        "portfolio_value": "#GRV{ CTX['PORTFOLIO_VALUE'] }"
+                                    },
+                                    "dataSink": {
+                                        "name": "adhoc",
+                                        "entity": "HAZELCAST_CLUSTER_QUEUE",
+                                        "config" : {
+                                            "queueName": "CUSTOMER_DATA"
+                                        }
+                                    }
+                                }
+                        ]]>
+                        </config>
+                    </dataBlockProcessor>
+                    -->
+                </dataBlockProcessors>
+            </schemaAppliedProcessors>
+            <dataPointCollections/>
+            <alerts/>
+        </schema>
+    </schemas>
+    <dataSinks/>
+</apiroConf>

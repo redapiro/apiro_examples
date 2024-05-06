@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<apiroConf version="1" xmlns="http://apiro.com/apiro/v1/root" >
+    <loadOrder>25</loadOrder>
+    <dataSinks>
+        <dataSink name="DATA_SINK_CUSTOMER_EMAIL_ATTACH_CSV_0" definition="EMAIL_ATTACH">
+            <config>
+                <![CDATA[
+                    {
+                        "to":["apirokai@gmail.com"],
+                        "cc":[],
+                        "bcc":[],
+                        "subject":"Customer data attached"
+                    }
+            ]]>
+            </config>
+        </dataSink>
+    </dataSinks>
+</apiroConf>
