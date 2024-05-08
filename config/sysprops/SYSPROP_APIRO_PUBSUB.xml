@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+
+        <envProperty>
+            <name>PUBSUB_SVC_KEY</name>
+            <value><![CDATA[my encrypted token]]></value>
+            <encrypted>true</encrypted>
+            <jsonEscape>true</jsonEscape>
+        </envProperty>
+
+    </envProperties>
+
+</apiroConf>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+        <envProperty>
+            <name>APIRO_NEXUS_READ_PW</name>
+            <value>[MY_APIRO_NEXUS]</value>
+            <encrypted>true</encrypted>
+        </envProperty>
+    </envProperties>
+</apiroConf>

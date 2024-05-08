@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+
+        <envProperty>
+            <name>APIRO_SFTP_HOST</name>
+            <value>[APIRO_SFTP_HOST_IP]</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_SFTP_USERNAME</name>
+            <value>apirodrop</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_SFTP_KEY</name>
+            <value><![CDATA[my enrypted token]]></value>
+            <encrypted>true</encrypted>
+            <jsonEscape>true</jsonEscape>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_SFTP_BASE_DIRECTORY</name>
+            <value>/home/apirodrop/feeds_DEMO7</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+    </envProperties>
+
+</apiroConf>

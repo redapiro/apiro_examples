@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+        <envProperty>
+            <name>REST_PAGINATION_MAX</name>
+            <value>99999</value>
+        </envProperty>
+        <envProperty>
+            <name>REST_PAGINATION_MAX</name>
+            <env>rud</env>
+            <value>1</value>
+        </envProperty>
+    </envProperties>
+</apiroConf>

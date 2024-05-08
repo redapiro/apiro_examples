@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+        <envProperty>
+            <name>TESTFEED_GIT_PASSWORD</name>
+            <value>
+                [MY_TEST_FEED_GIT_PASSWORD]
+            </value>
+            <encrypted>true</encrypted>
+            <scrub>true</scrub>
+        </envProperty>
+        <envProperty>
+            <name>GCP_SVC_ACCOUNT_BASE64</name>
+            <value>
+                [GCP_SVC_ACCOUNT_BASE64_ENCODED_KEY]
+            </value>
+            <encrypted>true</encrypted>
+            <scrub>true</scrub>
+        </envProperty>
+        <envProperty>
+            <name>GCP_SVC_ACCOUNT</name>
+            <value>
+                [GCP_SVC_ACCOUNT_ENCODED_KEY]
+            </value>
+            <jsonEscape>true</jsonEscape>
+            <encrypted>true</encrypted>
+        </envProperty>
+        <envProperty>
+            <name>OPENAI_API_KEY</name>
+            <value>
+                [MY_OPEN_API_ENCODED_KEY]
+            </value>
+            <encrypted>true</encrypted>
+            <scrub>true</scrub>
+        </envProperty>
+    </envProperties>
+</apiroConf>
+
+
+
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+        <envProperty>
+            <name>SOLEADIFY_API_KEY</name>
+            <value>[MY_VERIDION_API_ENCRYPTED_TOKEN]</value>
+            <encrypted>true</encrypted>
+        </envProperty>
+    </envProperties>
+</apiroConf>

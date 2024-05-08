@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+
+        <envProperty>
+            <name>APIRO_EMAIL_HOST</name>
+            <value>[MY_EMAIL_HOST]</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_EMAIL_PORT</name>
+            <value>993</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_EMAIL_USERNAME</name>
+            <value>[MY_EMAIL_USERNAME]</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_EMAIL_PASSWORD</name>
+            <value>[MY_EMAIL_PASSWORD]/value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>APIRO_EMAIL_PROVIDER</name>
+            <value>imaps</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+    </envProperties>
+
+</apiroConf>

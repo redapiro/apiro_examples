@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf>
+    <loadOrder>3</loadOrder>
+    <envProperties>
+        <envProperty>
+            <name>ESGNL_API_KEY</name>
+            <value>[MY_ESGN_ANALYTICS_TOKEN1]</value>
+            <encrypted>true</encrypted>
+        </envProperty>
+        <envProperty>
+            <name>ESGNL_PRODUCT_ID_500k_limit</name>
+            <value>[MY_ESGN_ANALYTICS_TOKEN2]</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+        <envProperty>
+            <name>ESGNL_PRODUCT_ID_5k_limit</name>
+            <value>[MY_ESGN_ANALYTICS_TOKEN3]</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>ESGNL_PRODUCT_ID_20_limit</name>
+            <value>[MY_ESGN_ANALYTICS_TOKEN4]</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+    </envProperties>
+</apiroConf>
