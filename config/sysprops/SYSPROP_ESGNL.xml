@@ -5,23 +5,23 @@
         <envProperty>
             <name>ESGNL_API_KEY</name>
             <value>[MY_ESGN_ANALYTICS_TOKEN1]</value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
         <envProperty>
             <name>ESGNL_PRODUCT_ID_500k_limit</name>
             <value>[MY_ESGN_ANALYTICS_TOKEN2]</value>
-            <encrypted>false</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
         <envProperty>
             <name>ESGNL_PRODUCT_ID_5k_limit</name>
             <value>[MY_ESGN_ANALYTICS_TOKEN3]</value>
-            <encrypted>false</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
 
         <envProperty>
             <name>ESGNL_PRODUCT_ID_20_limit</name>
             <value>[MY_ESGN_ANALYTICS_TOKEN4]</value>
-            <encrypted>false</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
     </envProperties>
 </apiroConf>

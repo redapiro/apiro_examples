@@ -6,7 +6,7 @@
         <envProperty>
             <name>PUBSUB_SVC_KEY</name>
             <value><![CDATA[my encrypted token]]></value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
             <jsonEscape>true</jsonEscape>
         </envProperty>
 

@@ -6,19 +6,19 @@
         <envProperty>
             <name>APIRO_SFTP_HOST</name>
             <value>[APIRO_SFTP_HOST_IP]</value>
-            <encrypted>false</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
 
         <envProperty>
             <name>APIRO_SFTP_USERNAME</name>
             <value>apirodrop</value>
-            <encrypted>false</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
 
         <envProperty>
             <name>APIRO_SFTP_KEY</name>
             <value><![CDATA[my enrypted token]]></value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
             <jsonEscape>true</jsonEscape>
         </envProperty>
 

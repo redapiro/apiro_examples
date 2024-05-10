@@ -5,7 +5,7 @@
         <envProperty>
             <name>SOLEADIFY_API_KEY</name>
             <value>[MY_VERIDION_API_ENCRYPTED_TOKEN]</value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
     </envProperties>
 </apiroConf>

@@ -7,7 +7,7 @@
             <value>
                 [MY_TEST_FEED_GIT_PASSWORD]
             </value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
             <scrub>true</scrub>
         </envProperty>
         <envProperty>
@@ -15,7 +15,7 @@
             <value>
                 [GCP_SVC_ACCOUNT_BASE64_ENCODED_KEY]
             </value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
             <scrub>true</scrub>
         </envProperty>
         <envProperty>
@@ -24,14 +24,14 @@
                 [GCP_SVC_ACCOUNT_ENCODED_KEY]
             </value>
             <jsonEscape>true</jsonEscape>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
         <envProperty>
             <name>OPENAI_API_KEY</name>
             <value>
                 [MY_OPEN_API_ENCODED_KEY]
             </value>
-            <encrypted>true</encrypted>
+            <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
             <scrub>true</scrub>
         </envProperty>
     </envProperties>
