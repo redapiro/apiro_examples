@@ -4,7 +4,7 @@
     <envProperties>
         <envProperty>
             <!--<env>APIRO_PRE_DEMO</env> should match -> docker-compose.yaml APIRO_INSTANCEID: APIRO_PRE_DEMO-->
-            <name>APIRO_USERNAME</name>
+            <name>APIRO_GIT_USERNAME</name>
             <value>apiropublic</value>
             <encrypted>false</encrypted>
         </envProperty>
