@@ -18,7 +18,7 @@
             <![CDATA[{
                 "dataSource": {
                   "config": {
-                    "username": "${SYS:APIRO_GIT_USERNAME}",
+                    "username": "${SYS:APIRO_GITHUB_USERNAME}",
                     "password": "${SYS:APIRO_GITHUB_PW}",
                     "gitURL": "https://github.com/redapiro/apiro_examples.git",
                     "branch": "main",
