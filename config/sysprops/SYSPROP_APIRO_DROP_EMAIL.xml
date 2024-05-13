@@ -23,7 +23,7 @@
 
         <envProperty>
             <name>APIRO_EMAIL_PASSWORD</name>
-            <value>[MY_EMAIL_PASSWORD]/value>
+            <value>[MY_EMAIL_PASSWORD]</value>
             <encrypted>false</encrypted><!--Change this to true once you provide an encrypted value-->
         </envProperty>
 
